@@ -1,0 +1,37 @@
+
+//Uses dictionary for nodes being keys and adjacents being lists corresponding to keys
+
+CLASS GRAPH:
+	FUNCTION INTIAL():		//Called everytime to give the correct values for data
+		node_list <- TYPE DICTIONARY
+		node_adjacent <- TYPE LIST
+
+	FUNCTION ADD_NODE(node):
+		node_dict[node] <- node	//Adds it to the dictionary as a key
+
+	FUNCTION GET_NODE(node):
+		IF node IN node_dict:	//Checks if in the dictionary
+			RETURN node_dict[node]
+		ELSE:
+			RETURN none
+
+	FUNCTION ADD_EDGE(from,to):
+		IF from NOT IN node_dict:
+			ADD_NODE(from)
+		IF to NOT IN node_dict:
+			ADD_NODE(to)
+		node_dict[frm].ADD_NEIGHBOUR(to)
+		node_dict[to].ADD_NEIGHBOUR(frm)
+
+	FUNCTION ADD_NEIGHBOUR(neighbour):
+		node_adjacent APPEND neighbour
+		RETURN node_adjacent
+		
+//example inputs
+
+GRAPH.ADD_NODE('a')
+GRAPH.ADD_NODE('b')
+GRAPH.ADD_NODE('b')
+
+GRAPH.ADD_EDGE('a','b')
+GRAPH.ADD_EDGE('b','c')
