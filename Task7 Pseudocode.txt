@@ -1,0 +1,18 @@
+
+
+FUNCTION IS_PRIME(number, a <- 3):
+	IF number = 2:	//The only even prime number
+		prime <- True
+	ELSE IF number <= 1 or number % 2 = 0:
+		prime <- False	// checks if 1 or even number
+	ELSE IF (a * a) > number:
+		prime <- True	// checks if any square roots of number
+	ELSE IF number % a = 0:	//Check if number is divisible
+		prime <- False
+	ELSE: //None of the IF statements are true recall function increasing 'a' value
+		return IS_PRIME(number, a + 2) //incrementing by 2 keeping it odd
+	return prime
+
+number <- INPUT number
+prime  <- IS_PRIME(number)
+OUTPUT prime

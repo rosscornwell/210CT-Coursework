@@ -1,0 +1,13 @@
+
+FUNCTION REMOVE_VOWEL(string):
+	IF NOT string:	//Checks if string is empty
+		RETURN string
+	ELSE IF LOWERCASE(string[0]) IN 'aeiou':	//checks if 1st character is a vowel
+		RETURN REMOVE_VOWEL(string[1:])	//Recalls function missing first character
+	RETURN string[0] + REMOVE_VOWEL(string[1:])
+	//returns first checked letter then recalls function without that character
+
+
+string <- INPUT word
+new_string <- REMOVE_VOWEL(string)
+OUTPUT new_string
