@@ -1,0 +1,13 @@
+
+FUNCTION PERFECT-SQUARE(value):
+	squaredValue <- SQUAREROOT value
+	IF squaredValue IS INTEGER:
+		OUTPUT value	//Orginal value
+	ELSE:
+		squaredValue <- ROUND DOWN squaredValue	//Round value down to whole number
+		result <- squaredValue ** 2 // squaredValue to the power of 2
+		RETURN result
+
+value <- INPUT number
+result <- PERFECT-SQUARE(value)
+OUTPUT result
