@@ -1,0 +1,55 @@
+//Run time BigO Notation O(n^2 * log(n))
+
+FUNCTION ADD_MAT(a,b):
+	result <- [] //empty list
+	FOR i IN RANGE(LENGTH a):
+		row <- []
+		FOR j IN RANGE(LENGTH a[i]):
+			row APPEND(a[i][j] + b[i][j])
+		result APPEND(row)
+	RETURN result
+
+FUNCTION SUB_MAT(a,b):
+	result <- []
+	FOR i IN RANGE(LENGTH a):
+		row <- []
+		FOR j IN RANGE(LENGTH a[i]):
+			row APPEND(a[i][j] - b[i][j])
+		result APPEND(row)
+	RETURN result
+
+FUNCTION MULT_MAT(a,b):
+	result <- [] 
+	p <- LENGTH b[0] - 1
+	FOR i IN RANGE LENGTH a:
+		result APPEND([0])
+	FOR i IN RANGE LENGTH a:
+		FOR j IN RANGE p:
+			result[i] APPEND(0)
+	FOR m IN RANGE LENGTH a:
+		FOR n IN RANGE (p+1):
+			FOR r IN RANGE LENGTH a[0]:
+				result[i][j] <- a[i][r] * b[r][n] + result[i][j]
+	RETURN result
+
+FUNCTION MULT_nNUM(a,n):
+	result <- []
+	FOR i IN RANGE(LENGTH a):
+		row <- []
+		FOR j IN RANGE(LENGTH a[i]):
+			row APPEND(a[i][j] * 2)
+		result APPEND(row)
+	RETURN result
+
+//R = B*C - 2*(B+C)
+R1 <- MULT_MAT(B,C)
+R2 <- ADD_MAT(B,C)
+R3 <- MULT_NUM(R2,2)
+R  <- MULT_SUB(R1,R3)
+
+
+
+
+
+
+

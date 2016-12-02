@@ -1,0 +1,15 @@
+//BigO notation = O(n)
+
+FUNCTION REVERSE(words):
+	wordLength <- LENGTH words
+	IF wordLength = 1: //last word
+		RETURN words
+	RETURN Words[-1] + REVERSE(words[:-1])
+	// returns the last word, recalls the function with all the words but the last
+
+words <- TYPE (LIST)	//Makes variable words a list
+words <- INPUT sentence SPLIT by spaces		//each word is split into different list values
+words <- REVERSE(words)	//Rearrange the sentence
+FOR i IN RANGE LENGTH words: // Have to put the spaces back in
+	result += words[i] + ' ' //Adding spaces after each word
+OUTPUT result
