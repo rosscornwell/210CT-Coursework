@@ -33,3 +33,4 @@ while i<len(inp):#While 'i' is smaller than length of list
 		i+=1    #Test the next sequence
 
 print("Starting location of sequence: ",loc," Length of squence: ",maximum)
+print(inp[loc:loc+maximum])
