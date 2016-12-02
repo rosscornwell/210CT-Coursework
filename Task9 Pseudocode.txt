@@ -1,0 +1,22 @@
+
+FUNCTION BINARY_SEARCH(array,top,low):
+	left <- 0
+	right <- LENGTH array
+	WHILE left <= right:
+		middle <- INTEGER((left+right)/2)	//Find middle value
+		IF array[middle] <= top AND array[middle] >= low:
+			RETURN True	//Checks if value is between target
+		ELSE IF array[middle] > top:	//if middle is bigger need to reduce the right value
+			right <- middle - 1
+		ELSE IF array[middle] < low:	//if middle is below need to increase the left value
+			left <- middle + 1
+	RETURN False	//if can't find it returning False
+
+list <- INPUT numbers SPLIT by commas ','
+top <- INPUT 'Top Search number'
+low <- INPUT 'Lowest search number'
+
+result <- BINARY_SEARCH(list,top,low)
+OUTPUT result
+
+//BigO = O(n)
